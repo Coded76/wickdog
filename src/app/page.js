@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,17 +13,36 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-gray-900 text-white">
+      <header className="bg-gray-900 py-4 fixed top-0 w-full z-50">
+        <div className="container mx-auto flex justify-between items-center px-6">
+          <div className="text-white font-bold text-2xl">
+            <Image
+              src={"/logo.jpg"}
+              height={50}
+              width={50}
+              className="rounded-full"
+            />
+          </div>
+          <a
+            href="#"
+            className="bg-yellow-500 text-black px-6 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition"
+          >
+            Get $DAISY
+          </a>
+        </div>
+      </header>
+
+      <main className="bg-gray-900 text-white pt-20">
         {/* Section 1: Hero Section */}
         <section
           className="h-screen flex items-center justify-center bg-cover bg-center"
-          style={{ backgroundImage: "url(/images/hero-bg.jpg)" }}
+          style={{ backgroundImage: "url(/bg.jpg)" }}
         >
-          <div className="text-center max-w-4xl">
+          <div className="text-center text-black max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               John Wick's Dog
             </h1>
-            <p className="text-lg md:text-2xl mb-8">
+            <p className="text-lg md:text-2xl text-white mb-8">
               The story of love, loss, and the unbreakable bond with our
               four-legged best friends.
             </p>
@@ -40,16 +60,31 @@ export default function Home() {
           id="story"
           className="h-screen flex items-center justify-center bg-gray-800"
         >
-          <div className="max-w-3xl text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              The Gift of Daisy
-            </h2>
-            <p className="text-lg md:text-xl leading-relaxed mb-8">
-              Daisy was a Beagle puppy given to the former hitman John Wick as a
-              present from his late wife Helen shortly after her death. A symbol
-              of love and healing, Daisy was meant to help John cope with the
-              grief of his wife's passing.
-            </p>
+          <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 items-center gap-12 px-6">
+            <div className="order-2 md:order-1">
+              <h2 className="text-2xl md:text-4xl font-bold mb-6">
+                The Gift of Daisy
+              </h2>
+              <p className="text-lg md:text-xl leading-relaxed mb-8">
+                Daisy was a Beagle puppy given to the former hitman John Wick as
+                a present from his late wife Helen shortly after her death. A
+                symbol of love and healing, Daisy was meant to help John cope
+                with the grief of his wife's passing.
+              </p>
+              <a
+                href="#"
+                className="inline-block bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition"
+              >
+                Learn More
+              </a>
+            </div>
+            <div className="order-1 md:order-2 flex justify-center">
+              <img
+                src="/dog.jpg"
+                alt="Daisy the Beagle Puppy"
+                className="rounded-xl shadow-lg max-w-full md:max-w-md"
+              />
+            </div>
           </div>
         </section>
 
